@@ -1,0 +1,57 @@
+/*-- CSS Reset --*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym { border:0;}
+img, a{ outline:none;}
+/*--Main CSS--*/
+body{ margin:0; padding:0;font-size:100%; background:url(/assets/wood_pattern.png); font-family:Calibri, Helvetica, sans-serif;}
+.wrapper,
+.headerWrap,
+.footerWrap{width:981px; margin:0 auto; padding:0;}
+.wrapperCont{ clear:both}
+.clear{ clear:both}
+
+/*--LogIn Page--*/
+.radius5{-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {outline: none;}
+.loginWrap{ background:#fcfbfb url(/assets/bg-logIn.jpg) repeat-x left bottom; border:2px solid #20120a; width:530px; margin:4em auto 0;  -moz-box-shadow: 0px 0px 13px #6a3d15; -webkit-box-shadow: 0px 0px 13px #6a3d15; box-shadow: 0px 0px 13px #6a3d15;}
+.loginLogo{ margin:0 auto; width:210px;}
+.logDline{ background:#9a8c65; height:1px; display:block; margin:20px 17px 0;}
+.loginLogo img{ margin-top:25px;}
+.loginWrap h2{color:#4f3945; font-size:22px; font-family:Helvetica, Arial, sans-serif; font-weight:bold; margin:0 0 20px 0;}
+.loginWrap .error{font-size:13px; color:#D70000; padding-bottom:10px;}
+.loginForm{padding:20px 75px 30px;}
+
+.loginForm label{display:inline-block; width:100px; font-size:13px; color:#969696; }
+.loginForm input[type=text],
+.loginForm input[type=password]{display:inline-block; width:355px; border:0; height:28px; background:transparent; color:#545454}
+.loginForm .loginInput{ background:#fcfcfc url(/assets/bg-loginInput.jpg) repeat-x left top; border:1px solid #c1c1c1; padding:9px 9px 7px;}
+.loginForm .loginInput .dLine{ background-color:#c1c1c1; height:1px; display:block; margin:5px 0;}
+.loginForm .fRow{ height:30px;}
+.loginForm .loginBtn{ margin-top:20px;}
+.loginForm #btn-login{font-size: 18px; color: #ffffff; padding: 7px 30px; border:1px solid #645b3f; width:380px; height:40px; background-color:#76683d; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; cursor:pointer;}
+.loginForm .rememberMe{font-size:14px; color:#4f3945; margin-top: 20px; background:url(/assets/bg-remebr.jpg) repeat-x; height:35px; border:1px solid #c1c1c1; line-height:35px; padding:0 11px;}
+.loginForm .rememberMe .checkMe{ float:left; margin-top:12px; margin-right:10px;}
+.frpass{ background:url(/assets/bg-frpass.png) no-repeat left 0; width:416px;  margin:0 auto; text-align:center; height:45px; line-height:45px;}
+.frpass a{text-decoration:none; color:#fff; font-size:14px; font-weight:bold; text-shadow: 0px -2px 2px rgba(48, 27, 15, 0.8);}
+.frpass .icon-frpass{ background:url(/assets/bg-frIcone.png) no-repeat left; padding:10px 0 5px 30px; height:24px;}
+
+.login-footer{ color:#fff; text-align:center; font-size:11px;  text-shadow: 0px -2px 2px rgba(48, 27, 15, 0.8); margin:80px 0 20px 0;}
+
+div.sliderWrap {left: 20px;  height: 22px; background: url(/assets/bg-switch.png) no-repeat; width: 51px; padding-left:23px;  display: inline-block;
+    float: right; margin:-3px 5px 0 0;}
+div.sliderWrap .ui-slider-handle {position: absolute; cursor: pointer; cursor: hand; height: 22px; width: 23px; left: 0px; background: url(/assets/bg-switch.png) no-repeat -159px 0; top:0; margin-left: -25px; border:0;}
+
+/*--Footer CSS--*/
+.footer{height:48px; background:url(/assets/bg-footer.png) repeat-x; margin-top:26px;}
+.footerWrap{ font-size:11px; color:#867646; text-align:center; padding-top:17px;}
+

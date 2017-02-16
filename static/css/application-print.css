@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+*/
+h1, h2, h3, h4, h5 { margin: 0px 0px 10px 0px; padding: 0px; }
+
+p { margin: 0px; padding: 0px; } 
+
+h2 { font-size: 18px; }
+
+a img { border: none; }
+
+a, a:hover, a:visited{
+  color:black;
+  text-decoration: none;
+}
+
+div#header {
+    display: none;
+}
+
+div#navigation {
+    display: none;
+}
+
+div#subnav {
+    display: none;
+}
+
+div.actions {
+    display: none;
+}  
+
+div.navigation_list{
+  display: none;
+}
+
+/*---- [EVENTS] ---------------------------------------------------------------------------------*/
+
+body#show.events div.photos {
+    display: none;
+}
+
+body#show.events div.recap_group table.recap_table {
+    width: 100%;
+}
+
+body#show.events div.comments {
+    display: none;
+}              
+
+/* REPORTS-------------------------------------------------------------------*/
+
+.new_report_search_params{
+  display: none;
+}
+
+/*--Custom css--*/
+* {-webkit-print-color-adjust: exact; print-color-adjust: exact;}
+.wrapper{margin-top:0;}
+.header,
+.content .contentWrap, 
+.tabCont{background:#FFFFFF; background-color:#FFFFFF; background-image:none;}
+.wrapper .content{ background-color:#fff; width:100%; font-family:Calibri, Helvetica, sans-serif; font-size:16px; line-height:21px; color:#000;}
+h2{ font-size:20px; border-bottom:2px solid #ccc; padding-bottom:8px;}
+/*h2:before{  content:">> ";  font-size:16px;}*/
+p{font-size:16px;}
+
+.nav, .bCrumb-wrap, #topNav{display:none;}
+.recap_group{padding:0 0 20px 0; display:block;}
+.recap_group h2{ font-size:18px;}
+.recap_group ul{list-style-position: inside;} 
+.recap_group br{ display:block; margin-bottom:2px;}

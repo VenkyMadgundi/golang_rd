@@ -1,0 +1,537 @@
+
+
+/*
+ * Styles for a pure CSS/HTML Bullet Graph implementation. Graph defined at
+ * http://www.perceptualedge.com/articles/misc/Bullet_Graph_Design_Spec.pdf
+ * or the Wikipedia entry http://en.wikipedia.org/wiki/Bullet_graph
+ * The following code was inspired by the work of Matt Grams as
+ * published at http://www.usrecordings.com/test-lab/bullet-graph.htm
+ *
+ * Sizing for the graph is specified in ems so the graph will scale
+ * easily with text size. From top to bottom, the horizontal elements
+ * in the graph are as follows:
+ *
+ *    1.2em - The labels for the performance target and regions.
+ *    2.4em - The graph itself. The performance measure is 50% of
+ *            this height and exactly centered in the graph. Any
+ *            label for the performance measure appears immediately
+ *            to the right of the graphed measure.
+ *    0.5em - The horizontal axis tick marks.
+ *    0.9em - Labels corresponding to the tick marks.
+ *
+ */
+ 
+/*
+ * Specify sizing for the general bullet-graph class since we
+ * assume all graphs on the page will want consistent sizing.
+ * Note that we've specified the height exactly, with no extra
+ * padding or margin.
+ *
+ * We set the position property of the main container so we
+ * can use absolute positioning of elements within the main
+ * container and that positioning will be relative to the
+ * main container.
+ */
+ 
+div.bullet-graph {
+	position: relative;
+	width: 550px;
+	height: 4em;
+}
+ 
+/*
+ * Now set the main graph area (exclusive of labels, axes, etc.).
+ * We move it down (by setting the top property) to make room
+ * for target and region labels.
+ */
+ 
+div.bullet-graph div.graph {
+	position: relative;
+	width: 100%;
+	top: 1.2em;
+	height: 2.4em;
+}
+ 
+/*
+ * Each of the regions of the graph is floated to make it easier
+ * to specify their size in the HTML markup (by setting the
+ * width of each as a percentage).
+ *
+ * Also add a gradient for those browsers that can support it.
+ */
+ 
+div.bullet-graph div.graph div[class^='region-'],
+div.bullet-graph div.graph div[class*=' region-'] {
+	float: left;
+	height: 100%;
+	filter:alpha(opacity=70); 
+	opacity:0.7;
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image:    -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image:      -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image:     -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image:         linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+ 
+/*
+ * Default colors for graph regions are gray, but other
+ * options are available with additional classes. Specific
+ * color values are derived from the work of Cynthia Brewer,
+ * et al at http://colorbrewer2.org
+ */
+ 
+div.bullet-graph div.region-1 { background-color: #F24E4E; }
+div.bullet-graph div.region-2 { background-color: #F2C94E; }
+div.bullet-graph div.region-3 { background-color: #A0B046; }
+div.bullet-graph div.region-4 { background-color: #ECD078; }
+ 
+div.bullet-graph.inverse div.region-1 { background-color: #252525; }
+div.bullet-graph.inverse div.region-2 { background-color: #525252; }
+div.bullet-graph.inverse div.region-3 { background-color: #737373; }
+div.bullet-graph.inverse div.region-4 { background-color: #969696; }
+ 
+div.bullet-graph.red div.region-1 { background-color: #F6E1D3; }
+div.bullet-graph.red div.region-2 { background-color: #EBBEA2; }
+div.bullet-graph.red div.region-3 { background-color: #E39874; }
+div.bullet-graph.red div.region-4 { background-color: #DD754E; }
+ 
+div.bullet-graph.red.inverse div.region-1 { background-color: #57120F; }
+div.bullet-graph.red.inverse div.region-2 { background-color: #8D2717; }
+div.bullet-graph.red.inverse div.region-3 { background-color: #AE3422; }
+div.bullet-graph.red.inverse div.region-4 { background-color: #CE4F30; }
+ 
+div.bullet-graph.purple div.region-1 { background-color: #EEEDF5; }
+div.bullet-graph.purple div.region-2 { background-color: #DADAEB; }
+div.bullet-graph.purple div.region-3 { background-color: #BCBEDB; }
+div.bullet-graph.purple div.region-4 { background-color: #9D9BC7; }
+ 
+div.bullet-graph.purple.inverse div.region-1 { background-color: #35117C; }
+div.bullet-graph.purple.inverse div.region-2 { background-color: #4A2C8E; }
+div.bullet-graph.purple.inverse div.region-3 { background-color: #6454A2; }
+div.bullet-graph.purple.inverse div.region-4 { background-color: #7F7DB9; }
+ 
+div.bullet-graph.orange div.region-1 { background-color: #F7E7CF; }
+div.bullet-graph.orange div.region-2 { background-color: #F1D2A4; }
+div.bullet-graph.orange div.region-3 { background-color: #E9B16E; }
+div.bullet-graph.orange div.region-4 { background-color: #E39342; }
+ 
+div.bullet-graph.orange.inverse div.region-1 { background-color: #6E2F08; }
+div.bullet-graph.orange.inverse div.region-2 { background-color: #90400C; }
+div.bullet-graph.orange.inverse div.region-3 { background-color: #BD5512; }
+div.bullet-graph.orange.inverse div.region-4 { background-color: #D47320; }
+ 
+div.bullet-graph.green div.region-1 { background-color: #EAF4E0; }
+div.bullet-graph.green div.region-2 { background-color: #D2E7C1; }
+div.bullet-graph.green div.region-3 { background-color: #B4D69C; }
+div.bullet-graph.green div.region-4 { background-color: #92C078; }
+ 
+div.bullet-graph.green.inverse div.region-1 { background-color: #23421C; }
+div.bullet-graph.green.inverse div.region-2 { background-color: #3C6A2E; }
+div.bullet-graph.green.inverse div.region-3 { background-color: #548847; }
+div.bullet-graph.green.inverse div.region-4 { background-color: #6FA75F; }
+ 
+div.bullet-graph.blue div.region-1 { background-color: #E2EBF7; }
+div.bullet-graph.blue div.region-2 { background-color: #CDDBEE; }
+div.bullet-graph.blue div.region-3 { background-color: #ADC9E0; }
+div.bullet-graph.blue div.region-4 { background-color: #84ADD5; }
+ 
+div.bullet-graph.blue.inverse div.region-1 { background-color: #1A316A; }
+div.bullet-graph.blue.inverse div.region-2 { background-color: #2D519B; }
+div.bullet-graph.blue.inverse div.region-3 { background-color: #4670B4; }
+div.bullet-graph.blue.inverse div.region-4 { background-color: #6391C5; }
+ 
+/*
+ * Allow for (optional) labels for each of the regions in the
+ * graph. These labels will appear above the graph proper, left-
+ * aligned with the left edge of the region.
+ *
+ * With the combination of width, white-space, overflow, and
+ * text-overflow properties, we'll clip the text to the width
+ * of the region (adding ellipses to indicate the clipping).
+ *
+ * Note that we use the same region to show the label for the
+ * target marker. You probably don't want to use both target
+ * labels and region labels on the same graph. If you need both,
+ * you can position the target label on the left instead of
+ * the top using the target-label-left class. (Of course, in
+ * that case you need to watch for collisions with measure
+ * labels.
+ */
+ 
+div.bullet-graph div.graph div[class^='region-'] div.region-label,
+div.bullet-graph div.graph div[class*=' region-'] div.region-label {
+	color: #575757;
+	background-image: none;
+	position: relative;
+	top: -1.2em;
+	left: 0;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 10px;
+	text-overflow: ellipsis;
+	filter:alpha(opacity=70); opacity:0.7;
+}
+ 
+/*
+ * Next is the main measure for the graph. For browsers with
+ * appropriate support, we add a subtle gradiant, rounded
+ * corners on the left edge, and a drop shadow.
+ */
+ 
+div.bullet-graph div.measure {
+	position: absolute;
+	height: 50%;
+	top: 25%;	
+	filter:alpha(opacity=80); opacity:0.8;
+	background-color: #F38630;
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:    -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:      -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:     -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:         linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	-webkit-border-radius: 0 0.3em 0.3em 0;
+	   -moz-border-radius: 0 0.3em 0.3em 0;
+	    border-radius:     0 0.3em 0.3em 0;
+ 	-webkit-box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.3);
+          box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.3);
+ 
+}
+ 
+
+/*
+ * Next is the main measure for the graph. For browsers with
+ * appropriate support, we add a subtle gradiant, rounded
+ * corners on the left edge, and a drop shadow.
+ */
+ 
+div.bullet-graph div.measure-goal {
+	position: absolute;
+	height: 50%;
+	top: 25%;
+	/*background-color: #252525;*/
+	filter:alpha(opacity=80); opacity:0.8;
+	background-color: #81c65b;
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:    -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:      -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:     -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image:         linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	/*-webkit-border-radius: 0 0.3em 0.3em 0;
+	   -moz-border-radius: 0 0.3em 0.3em 0;
+	    border-radius:     0 0.3em 0.3em 0;*/
+ 	-webkit-box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.3);
+          box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.3);
+ 
+}
+
+
+
+/*
+ * Default color scheme from above is gray scale, but here are
+ * alternates.
+ */
+ 
+div.bullet-graph.inverse div.measure { background-color: #F0F0F0; }
+div.bullet-graph.red div.measure { background-color: #57120F; }
+div.bullet-graph.red.inverse div.measure { background-color: #F6E1D3; }
+div.bullet-graph.purple div.measure { background-color: #35117C; }
+div.bullet-graph.purple.inverse div.measure { background-color: #EEEDF5; }
+div.bullet-graph.orange div.measure { background-color: #6E2F08; }
+div.bullet-graph.orange.inverse div.measure { background-color: #F7E7CF; }
+div.bullet-graph.green div.measure { background-color: #23421C; }
+div.bullet-graph.green.inverse div.measure { background-color: #EAF4E0; }
+div.bullet-graph.blue div.measure { background-color: #1A316A; }
+div.bullet-graph.blue.inverse div.measure { background-color: #E2EBF7; }
+ 
+/*
+ * Now position the measurement label. (It's optional and can be
+ * omitted from the markup if desired.) We place the label immediately
+ * to the left of the measurement bar. Note that we don't make any
+ * accommodations for overflowing the graph.
+ */
+ 
+div.bullet-graph div.graph div.measure-goal div.measure-label, div.bullet-graph div.graph div.measure div.measure-label {
+	color: #FFF;
+	position: relative;
+	/*left: 90%;*/
+	padding-left: 0.3em;
+	text-align: right;
+	right: 5px;
+	vertical-align: middle;
+	white-space: nowrap;
+	background-image: none;
+}
+div.bullet-graph.inverse div.graph div.measure div.measure-label {
+	color: #FFF;
+}
+ 
+/*
+ * Next up is the target marker, if we want one.
+ */
+ 
+div.bullet-graph div.target {
+	position: absolute;
+	left: -1px; /* shift left since width > 1px */
+	height: 100%;
+	border-right: 5px #00A8C6 solid;
+}
+ 
+/*
+ * By default, the target label is positioned directly
+ * above the target marker. The label can optionally
+ * be placed to the left of the marker by using the
+ * target-label-left class instead of target-left.
+ *
+ * Note that the label requires two nested <div> elements.
+ * The outer <div class='target-label'> is used to
+ * position the label above the graph, and the inner
+ * <div class='target-label-text'> shifts the text
+ * to the left so that it's centered over the marker.
+ */
+ 
+div.bullet-graph div.graph div.target div.target-label {
+	color: #00A8C6;
+	position: absolute;
+	top: -1.2em;
+	right: 0;
+	text-align: right;
+	white-space: nowrap;
+}
+div.bullet-graph div.graph div.target div.target-label div.target-label-text {
+	position: relative;
+	right: -50%;
+	font-weight: bold;
+}
+div.bullet-graph div.graph div.target div.target-label-left {
+	color: #000;
+	position: relative;
+	height: 100%;
+	top: 0.6em;
+	left: 100%;
+	padding-left: 0.4em;
+	text-align: left;
+	vertical-align: middle;
+	white-space: nowrap;
+	background-image: none;
+}
+div.bullet-graph.inverse div.graph div.target div.target-label-left {
+	color: #FFF;
+}
+ 
+/*
+ * Underneath the graph itself is the horizontal axis. We wrap the
+ * entire axis in a <div class='scale'> to position it, and then
+ * use individual <div class='tick'> elements for each tick mark.
+ * Set the left property of these tick marks to define their position;
+ * generally it would be specified as a percentage.
+ */
+ 
+div.bullet-graph div.scale {
+	position: relative;
+	top: 1.2em;
+	width: 100%;
+	height: 0.5em;
+}
+div.bullet-graph div.scale div.tick {
+	position: absolute;
+	height: 100%;
+	width: 1px;
+	background-color: #8f8f8f;
+}
+ 
+/*
+ * For the tick mark labels, we use the same approach as with the
+ * target label: namely two nested containers. The outer <div>
+ * positions the label vertically, and the inner <div> shifts the
+ * text left to center it over the tick mark.
+ */
+ 
+div.bullet-graph div.scale div.tick div.tick-label {
+	color: #575757;
+	font-size: 0.9em;
+	position: absolute;
+	bottom: -1.4em;
+	white-space: nowrap;
+}
+div.bullet-graph div.scale div.tick div.tick-label div.tick-label-text {
+	position: relative;
+	left: -40%;
+}
+
+.badge {
+    border: 2px solid white;
+    border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+    box-shadow: 1px 1px 1px black;
+    color: white;
+    height: 20px; 
+    padding: 5px 1px 1px 1px;
+    text-align: center;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.badge-orange {
+    background:         radial-gradient( 5px -9px, circle, white 8%, #F38630 26px );
+    background:    -moz-radial-gradient( 5px -9px, circle, white 8%, #F38630 26px );
+    background:     -ms-radial-gradient( 5px -9px, circle, white 8%, #F38630 26px );
+    background:      -o-radial-gradient( 5px -9px, circle, white 8%, #F38630 26px );
+    background: -webkit-radial-gradient( 5px -9px, circle, white 8%, #F38630 26px );
+    background-color: #F38630;
+}
+
+.badge-red {
+    background:         radial-gradient( 5px -9px, circle, white 8%, #F24E4E 26px );
+    background:    -moz-radial-gradient( 5px -9px, circle, white 8%, #F24E4E 26px );
+    background:     -ms-radial-gradient( 5px -9px, circle, white 8%, #F24E4E 26px );
+    background:      -o-radial-gradient( 5px -9px, circle, white 8%, #F24E4E 26px );
+    background: -webkit-radial-gradient( 5px -9px, circle, white 8%, #F24E4E 26px );
+    background-color: #F24E4E;
+}
+
+.badge-yellow {
+    background:         radial-gradient( 5px -9px, circle, white 8%, #F2C94E 26px );
+    background:    -moz-radial-gradient( 5px -9px, circle, white 8%, #F2C94E 26px );
+    background:     -ms-radial-gradient( 5px -9px, circle, white 8%, #F2C94E 26px );
+    background:      -o-radial-gradient( 5px -9px, circle, white 8%, #F2C94E 26px );
+    background: -webkit-radial-gradient( 5px -9px, circle, white 8%, #F2C94E 26px );
+    background-color: #F2C94E;
+}
+
+.badge-green {
+    background:         radial-gradient( 5px -9px, circle, white 8%, #A0B046 26px );
+    background:    -moz-radial-gradient( 5px -9px, circle, white 8%, #A0B046 26px );
+    background:     -ms-radial-gradient( 5px -9px, circle, white 8%, #A0B046 26px );
+    background:      -o-radial-gradient( 5px -9px, circle, white 8%, #A0B046 26px );
+    background: -webkit-radial-gradient( 5px -9px, circle, white 8%, #A0B046 26px );
+    background-color: #A0B046;
+}
+
+
+.timeline-wrap { position: relative; width: 100%; height: 3px; background: #333; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; 
+background: #afafaf; /* Old browsers */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afafaf', endColorstr='#93c464',GradientType=1 ); /* IE6-9 */
+
+}
+.timeline-wrap * {
+	-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;
+}
+.timeline-event {
+	position: absolute;
+	left: 0; 
+	top: 0;
+}
+.timeline-event-node {
+	position: absolute; 
+	top: -3px; 
+	left: 0px;
+	border-radius: 8px; 
+	width: 9px; 
+	height: 9px; 
+	background: #afafaf;
+	cursor: pointer;
+	/*-webkit-transition: width 0.05s ease-out, height 0.05s ease-out, margin 0.05s ease-out, background 0.05s ease-out;
+	-moz-transition: width 0.05s ease-out, height 0.05s ease-out, margin 0.05s ease-out, background 0.05s ease-out;
+	transition: width 0.05s ease-out, height 0.05s ease-out, margin 0.05s ease-out, background 0.05s ease-out;*/
+}
+
+.timeline-event.timeline-selected .timeline-event-node, .timeline-event.timeline-selected .timeline-event-node:hover { 
+	width: 14px; 
+	height: 14px; 
+	margin-left: -3px; 
+	margin-top: -3px; 
+	background: #222;
+}
+
+.timeline-large-scale, .timeline-small-scale {
+	position: absolute;
+	left: 0;
+	top: -30px;
+	font: bold 10px/18px 'Lucida Grande', helvetica, tahoma, sans-serif;
+	color: #afafaf;
+}
+.timeline-large-scale .active {
+	color: #93C464;
+}
+.timeline-dateblock {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-left: -12px;
+}
+.timeline-dateblock:before {
+	display: block;
+	content: "";
+	position: absolute;
+	left: 12px;
+	top: 20px;
+	width: 1px;
+	height: 10px;
+	background: #222;
+}
+.timeline-small-scale .timeline-dateblock:before {
+	top: 25px;
+	height: 4px;
+	background: #777;
+}
+.timeline-small-scale {
+	color: #afafaf;
+	top: -30px;
+}
+
+.timeline-months .timeline-dateblock {
+	margin-left: -6px;
+}
+.timeline-months .timeline-dateblock:before {
+	left: 5px;
+}
+.timeline-months .active {
+	color: #93C464;
+}
+
+.timeline-event-node .active{
+	background: #93C464 !important;
+}
+.timeline-event-content img { float: left; margin: 0 10px 10px 0; width: 100px; }
+.timeline-event-content { margin: 20px 0 10px; }
+
+div.badge-year { float: left;width: 60px;}
+div.badge-total { float: right;width: 60px;}
+
+.main-container .display_steps{
+	color: #FFF;
+	background: #6C4503;
+	border: 1px solid #5B4102;
+	font-size: 17px;
+	padding: 5px 9px;
+	height: 29px;
+	line-height: 29px;
+}
+
+.steps a:link,
+.steps a:active,
+.steps a:visited{
+	color: #a47e4d;
+	text-decoration: none;
+}
+
+.main-container table a:link,
+.main-container table a:active,
+.main-container table a:visited{
+	color: #a47e4d;
+	text-decoration: none;
+}
+
+.dasTabs ul li a{
+	color: #EDDFB7;
+	text-decoration: none;
+}
+
+.main-container table .badge a:link,
+.main-container table .badge a:active,
+.main-container table .badge a:visited{
+  color: #FFF;
+  text-decoration: underline;
+}

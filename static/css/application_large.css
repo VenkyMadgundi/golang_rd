@@ -1,0 +1,1471 @@
+html {
+    overflow: -moz-scrollbars-vertical !important;
+}
+
+html, body {
+    height: 100%;
+    margin: 0px 0px 1px;
+    padding: 0px;
+}
+
+body {
+    background: url(/assets/bg.png) repeat-y center;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    color: #333;
+}
+
+/*----[COLUMNAR BACKGROUND]------------------------------------------------------------*/
+
+body.columnar {
+    background: url(/assets/columnar_bg.png) repeat-y center;
+}
+
+body.empty {
+    margin: 10px;
+}
+
+/*----[RESETS]-------------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5 { margin: 0px 0px 10px 0px; padding: 0px; }
+
+h1 a:link, h1 a:visited,
+h2 a:link, h2 a:visited,
+h3 a:link, h3 a:visited,
+h4 a:link, h4 a:visited {
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px dotted #333;
+}
+
+p { margin: 0px; padding: 0px; }
+
+h2 { font-size: 18px; }
+
+a img { border: none; }
+
+.clear { clear: both; }
+
+/*----[DEFAULTS]-----------------------------------------------------------------------*/
+
+input[type='text'] {
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/*----[PAGE SETUP]---------------------------------------------------------------------*/
+
+div#page {
+    width: 966px;
+        min-height: 100%;
+    margin: 0px auto;
+        overflow:auto;
+    padding-bottom: 20px;
+}
+
+/*----[HEADER]-------------------------------------------------------------------------*/
+
+div#header {
+    padding: 20px 0px 0px 10px;
+    height: 100px;
+    background: #fff;
+    position: relative;
+    border-bottom: 20px solid #fff;
+}
+
+div#header div.content {
+    width: 965px;
+    margin: 0px auto;
+    position: relative;
+}
+
+div#header a#main_logo {
+    display: block;
+    width: 367px;
+    height: 64px;
+    background: url(/assets/logo.jpg);
+}
+
+div#header div#user_bar {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+div#header div#user_bar ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+div#header div#user_bar ul li {
+    float: left;
+}
+
+div#header div#user_bar ul li a:link,
+div#header div#user_bar ul li a:visited {
+    display: block;
+    padding: 0px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    border-right: 1px solid #ccc;
+    color: #000;
+}
+
+div#header div#user_bar ul li a.last:link,
+div#header div#user_bar ul li a.last:visited {
+    border: none;
+}
+
+body.admin div#header div#user_bar a#admin-link,
+body#dashboard.pages div#header div#user_bar a#home-link {
+    color: #e8cf8f;
+}
+
+/*----[NAVIGATION STYLES]--------------------------------------------------------------*/
+
+div#page div#navigation_wrapper {
+    background: #fff url(/assets/nav_bg.png) no-repeat center top;
+    padding: 7px 0px 0px 0px;
+}
+
+div#page div#navigation_wrapper div#navigation_content {
+    margin: 0px 12px 0px 12px;
+}
+
+div#page div#navigation_wrapper div#navigation_content div#navigation {
+    height: 40px;
+    overflow: hidden;
+    background: #49484a;
+}
+
+div#page div#navigation_wrapper div#navigation_content div#navigation ul {
+    list-style: none;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+
+div#page div#navigation_wrapper div#navigation_content div#navigation ul li {
+    display: inline;
+}
+
+div#page div#navigation_wrapper div#navigation_content div#navigation ul li a:link,
+div#page div#navigation_wrapper div#navigation_content div#navigation ul li a:visited {
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+}
+
+div#page div#navigation_wrapper div#navigation_content div#navigation ul li a.active:link,
+div#page div#navigation_wrapper div#navigation_content div#navigation ul li a.active:visited {
+    background: #edcf89;
+}
+
+div#page div#navigation_wrapper div#navigation_content div#navigation ul li a:hover {
+    background: #bbb;
+    color: #333;
+}
+
+/*--- [NAVIGATION ACTIVE STATE]--------------------------------------------------------*/
+
+body.brands_marques a#brands-link,
+body.admin_system_metrics a#metrics-link,
+body.brands a#brands-link,
+body.brands_photos a#brands-link,
+body.brands_documents a#brands-link,
+body.brands_brand_metrics a#brands-link,
+body.programs a#programs-link,
+body.pages a#dashboard-link,
+body.events a#events-link,
+body.events_photos a#events-link,
+body.events_videos a#events-link,
+body.accounts a#accounts-link,
+body.columnar.accounts_menu_placements a#accounts-link,
+body.columnar.accounts_account_contacts a#accounts-link,
+body.columnar.accounts_wait_staff_trainings a#accounts-link,
+body.columnar.accounts_tactical_spends a#accounts-link,
+body.columnar.accounts_tactical_spends a#accounts-link,
+body.documents a#documents-link,
+body.photos a#photos-link,
+body.videos a#videos-link,
+body.programs_goals a#programs-link,
+body.programs_metrics a#programs-link,
+body.programs_event_recaps a#programs-link,
+body.programs_events a#programs-link,
+body.programs_photos a#programs-link,
+body.programs_videos a#programs-link,
+body.programs_events a#programs-link,
+body.programs_form_templates a#programs-link,
+body.programs_event_metrics a#programs-link,
+body.programs_documents a#programs-link,
+body.programs_program_markets a#programs-link,
+body.programs_program_accounts a#programs-link,
+body.accounts_photos a#accounts-link,
+body.accounts_videos a#accounts-link,
+body.admin_divisions a#divisions-link,
+body.admin_users a#users-link,
+body.admin_goals a#users-link,
+body.admin_goals a#goals-link,
+body.admin_pos_items a#pos-items-link,
+body.admin_reactivate_markets a#reactivate-markets-link,
+body.admin_budgets a#budgets-link,
+body.admin_companies a#companies-link,
+body.reports a#reports-link,
+body.markets a#markets-link,
+body.divisions_admin_markets a#divisions-link,
+body.sponsorships a#sponsorships-link {
+    background: #edcf89 !important;
+    color: #333 !important;
+}
+
+/*----[SUB NAVIGATION ACTIVE STATE]----------------------------------------------------*/
+
+body.columnar.accounts_account_contacts a#account-contacts-side-link,
+body.columnar.accounts_wait_staff_trainings a#wait-staff-trainings-side-link,
+body.columnar.accounts_menu_placements a#menu-placements-side-link,
+body.columnar.accounts_tactical_spends a#tactical-spends-side-link,
+body#pos_items.accounts a#pos-items-side-link,
+body#brand_activity a#brand-activity-side-link,
+body#division_activity a#division-activity-side-link,
+body#division_gva_activity a#division-gva-activity-side-link,
+body#market_accounts_activity a#market-accounts-activity-side-link,
+body#accountwise_activity a#accountwise-activity-side-link,
+body#market_activity a#market-activity-side-link,
+body#menu_placement a#menu-placement-side-link,
+body#tactical_activity a#tactical-activity-side-link,
+body#user_activity a#user-activity-side-link,
+body#national_activity a#national-activity-side-link,
+body#event_activity a#event-activity-side-link,
+body#kpi_activity a#kpi-activity-side-link,
+body#wait_staff_training a#wait-staff-training-side-link,
+body#show.admin_users a#overview-side-link,
+body#show.admin_users a#overview-side-link,
+body#program_goals.admin_users a#program-goals-side-link,
+body#training_goals.admin_users a#training-goals-side-link,
+body#menu_placement_goals.admin_users a#menu_placement-goals-side-link,
+body#show.programs a#overview-side-link,
+body#gva.programs_goals a#gva-side-link,
+body#events.programs a#events-side-link,
+body#index.programs_event_recaps a#event-recap-side-link,
+body#show.programs_event_recaps a#event-recap-side-link,
+body.programs_photos a#photos-side-link,
+body.brands_photos a#photos-side-link,
+body.programs_videos a#videos-side-link,
+body.brands_videos a#videos-side-link,
+body#accounts a#accounts-side-link,
+body.accounts_photos a#photos-side-link,
+body.events_photos a#photos-side-link,
+body.accounts_videos a#videos-side-link,
+body.events_videos a#videos-side-link,
+body.programs_documents a#documents-side-link,
+body.brands_documents a#documents-side-link,
+body.brands_brand_metrics a#metrics-side-link,
+body.programs_event_recaps a#event-recap-side-link,
+body.programs_program_markets a#markets-side-link,
+body.programs_program_accounts a#accounts-side-link,
+body.programs_form_templates a#form-builder-link,
+/*body#index a#goals-side-link,*/
+/*body#show a#goals-side-link,*/
+/*body#edit a#goals-side-link,*/
+body#gva.programs a#gva-side-link,
+body#show.programs_goals a#goals-side-link,
+body#show.events a#overview-side-link,
+body#index.events_photos a#photos-side-link,
+body#index.events_videos a#videos-side-link,
+body#show.accounts a#overview-side-link,
+body#index.accounts_photos a#photos-side-link,
+body#index.accounts_videos a#videos-side-link,
+body#events.accounts a#events-side-link,
+body#show.admin-users a#overview-side-link,
+body#programs.admin-users a#programs-side-link,
+body#markets.admin-users a#markets-side-link,
+body#list.programs_events a#events-side-link,
+body.programs_event_metrics a#metrics-side-link,
+body#goals a#goals-side-link,
+body#show.brands a#overview-side-link,
+body#index.brands_marques a#marques-side-link,
+body#index.program_goals a#goals-side-link,
+body#index.admin_goals a#goals-side-link,
+body#program_goals a#program-goals-side-link,
+body#training_goals a#training-goals-side-link,
+body#wait_staff_training_unassign_brand a#wait-staff-training-unassign-brand-side-link,
+body#menu_placement_unassigned_brand a#menu-placement-unassigned-brand-side-link,
+body#menu_placement_goals a#menu_placement-goals-side-link,
+body#brands.accounts a#brands-side-link,
+body#photos a#photos-side-link {
+    color: #c94808 !important;
+    background: #eee !important;
+}
+
+/*----[SEARCH AREA]--------------------------------------------------------------------*/
+
+body.admin-divisions div#page div#navigation_wrapper div#search {
+    display: none;
+}
+
+div#page div#navigation_wrapper div#search {
+    background: #edcf89;
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+    color: #000;
+}
+
+div#page div#navigation_wrapper div#search div.search_wrapper {
+    position: absolute;
+    right: 295px;
+    top: 8px;
+}
+
+div#page div#navigation_wrapper div#search div.search_wrapper span.title {
+    padding-right: 10px;
+    text-align: right;
+    font-size: 14px;
+}
+
+div#page div#navigation_wrapper div#search div.search_wrapper span.help {
+    font-size: 11px;
+    margin: 0px 20px 0px 5px;
+    position: relative;
+    top: -3px;
+}
+
+div#page div#navigation_wrapper div#search div.search_wrapper span.help a:link,
+div#page div#navigation_wrapper div#search div.search_wrapper span.help a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+div#page div#navigation_wrapper div#search div.search_wrapper input[type='text'] {
+    width: 400px;
+    outline-style: none;
+    outline-width: 0px;
+}
+
+div#page div#navigation_wrapper div#search div.saved_filters {
+    position: absolute;
+    right: 20px;
+    top: 9px;
+}
+
+div#page div#navigation_wrapper div#search div.saved_filters select {
+    width: 200px;
+}
+
+div#page div#navigation_wrapper div#search div.saved_filters span.blurb {
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+/*----[SUB NAVIGATION STYLES]----------------------------------------------------------*/
+
+div#page div#navigation_wrapper div#subnav {
+}
+
+div#page div#navigation_wrapper div#subnav div.navigation_list {
+    height: 40px;
+    overflow: hidden;;
+    background: #edcf89;
+}
+
+div#page div#navigation_wrapper div#subnav div.navigation_list ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+div#page div#navigation_wrapper div#subnav div.navigation_list ul li {
+    display: inline;
+}
+
+div#page div#navigation_wrapper div#subnav div.navigation_list ul li a:link,
+div#page div#navigation_wrapper div#subnav div.navigation_list ul li a:visited {
+    display: block;
+    float: left;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+}
+
+div#page div#navigation_wrapper div#subnav div.navigation_list ul li a:hover {
+    text-decoration: underline;
+}
+
+/*----[MAIN CONTENT AREA]--------------------------------------------------------------*/
+
+div#page div#content {
+    margin: 0px 10px;
+    padding: 15px;
+    font-size: 14px;
+    position: relative;
+}
+
+/*----[DEFAULT LIST STYLE]-------------------------------------------------------------*/
+
+table.overview_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+table.overview_table thead {
+    text-align: left;
+    background: #eee;
+}
+
+table.overview_table thead tr th {
+    padding: 5px 10px;
+    text-align: left;
+}
+
+table.overview_table thead th.action,
+table.overview_table tbody td.action {
+    text-align: right;
+}
+
+table.overview_table thead th a.sort_link {
+    text-decoration: none;
+    border-bottom: 1px dotted #333;
+    color: #333;
+}
+table.overview_table tbody tr.odd {
+    background: #eee;
+}
+
+table.overview_table tbody tr td {
+    padding: 5px 5px;
+}
+
+table.overview_table tbody tr td.indent {
+    padding-left: 30px;
+}
+
+table.overview_table tbody tr td a:link,
+table.overview_table tbody tr td a:active,
+table.overview_table tbody tr td a:visited {
+    text-decoration: none;
+    color: #474747;
+}
+
+div.no_records {
+    border: 1px dashed #ddd;
+    padding: 20px;
+    margin: 15px 0px;
+}
+
+/*----[DEFAULT FORM STYLE]-------------------------------------------------------------*/
+
+div.default_form {
+
+}
+
+div.default_form dl {
+    display: block;
+    position: relative;
+    clear: both;
+}
+
+div.default_form dl dt {
+    float: left;
+    padding-top: 4px;
+}
+
+div.default_form dl dd {
+    margin-left: 100px;
+}
+
+div.default_form dl dd textarea {
+    height: 75px;
+    width: 330px;
+}
+div.default_form ul li {
+    list-style: none;
+}
+
+div.default_form dl dd.example {
+    color: #666;
+    font-style: italic;
+    font-size: 75%;
+    padding: 2px 0px 0px 2px;
+}
+
+div.default_form dl dd.error {
+    color: #f00;
+}
+
+div.default_form a.cancel:link,
+div.default_form a.cancel:active,
+div.default_form a.cancel:visited {
+    text-decoration: none;
+    color: #C96643;
+}
+
+
+div.default_form div.form_footer {
+    margin: 20px 0px;
+}
+
+div.default_form div.errorExplanation {
+    padding: 15px;
+    margin: 20px 0px;
+    background: #EEEEEE;
+    border: 2px solid #BC5F5C;
+}
+
+div.default_form div.errorExplanation p {
+    font-size: 14px;
+}
+
+div.default_form div.errorExplanation ul {
+    padding: 0px 0px 0px 15px;
+}
+
+div.default_form div.errorExplanation li {
+}
+
+div.default_form dd div.fieldWithErrors input[type='text'] {
+    border: 1px solid #BC5F5C;
+    background: #F6DBD9;
+}
+
+div.default_form dd input.short {
+    width: 100px;
+}
+
+div.default_form div.form_section {
+    border-top: 1px solid #ccc;
+    padding: 10px 0px;
+}
+
+/*----[SEPARATOR]----------------------------------------------------------------------*/
+
+div.title_separator {
+    background: #eee;
+    padding: 5px;
+    position: relative;
+    clear: both;
+    height: 20px;
+    overflow: hidden;
+}
+
+div.title_separator h3 {
+    float: left;
+}
+
+div.title_separator span.subtitle {
+    padding: 0px 0px 0px 7px ;
+    line-height: 18px;
+}
+
+div.title_separator div.actions {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    font-size: 11px;
+}
+
+div.simple_separator {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0px;
+}
+
+div.simple_separator h4 {
+    margin: 0px;
+}
+
+/*----[MODAL]--------------------------------------------------------------------------*/
+
+#control_overlay {
+    background-color: #000;
+}
+
+div.modal {
+    background: #fff;
+    border: 4px solid #e8cf8f;
+    width: 650px;
+    position: relative;
+}
+
+div.modal div.controls {
+    text-align: right;
+    padding: 10px;
+}
+
+div.modal div.title {
+    background: #e8cf8f;
+    padding: 10px;
+}
+
+div.modal div.content {
+    padding: 10px;
+}
+
+/*----[ FLASH - MASTER OF THE UNIVERSE]------------------------------------------------*/
+
+div.flash {
+    margin: 0px 0px 20px 0px;
+    padding: 10px;
+}
+
+div#notice.flash {
+    border: 1px solid #5A841C;
+    background: #E2EFC1;
+}
+
+div#error.flash {
+    background: #EEEEEE;
+    border: 1px solid #BC5F5C;
+}
+
+/*----[SEARCH RESULTS]-----------------------------------------------------------------*/
+
+div#page div.search_result {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    color: #666;
+    margin: 0px 0px 20px 0px;
+}
+
+div#page div.search_result span.count {
+    font-weight: bold;
+}
+
+div#page div.search_result span.search {
+    font-weight: bold;
+}
+
+div#page div.search_result div.save_form {
+    border-top: 1px solid #ccc;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
+}
+
+div#page div.search_result div.save_form dl {
+    margin: 0px;
+}
+
+div#page div.search_result div.save_form dd {
+    margin-left: 60px;
+}
+
+div#page div.search_result div.save_form div.form_footer {
+    margin: 10px 0px 0px 0px;
+}
+
+div#page div.search_result div.unkown_keywords {
+    margin: 10px 0px 0px 0px;
+}
+
+/*----[EVENTS CALENDAR]----------------------------------------------------------------*/
+
+body.events table.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+body.events table.calendar thead {
+
+}
+
+body.events table.calendar thead th abbr {
+    border-bottom: 0px;
+}
+
+body.events table.calendar tr td {
+    height: 95px;
+    border: 1px solid #c4d7ff;
+    vertical-align: top;
+}
+
+body#week.events table.calendar tr td {
+    height: 500px;
+}
+
+body.events table.calendar tr td.weekend {
+    border-right: none;
+}
+
+body.events table.calendar tr td:first-child {
+    border-left: none;
+    border-right: 1px solid #c4d7ff;
+}
+
+body.events table.calendar tr td div.day_header {
+    position: relative;
+}
+
+body.events table.calendar tr td div.day_header a.new_day_event {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    font-size: 2px;
+    text-decoration: none;
+    width: 12px;
+    height: 12px;
+    background: url(/assets/small_icons/plus.gif) no-repeat;
+}
+
+body.events table.calendar tr td a.day_header:link,
+body.events table.calendar tr td a.day_header:visited {
+    display: block;
+    height: 16px;
+    text-align: right;
+    background: #e7eef8;
+    font-size: 12px;
+    padding-right: 3px;
+    text-decoration: none;
+    color: #464646;
+}
+
+body.events table.calendar tr td.otherMonth a.day_header:link,
+body.events table.calendar tr td.otherMonth a.day_header:visited {
+    background: #eee;
+}
+
+body.events table.calendar tr td.today a.day_header:link,
+body.events table.calendar tr td.today a.day_header:visited {
+    background: #b9ccde;
+}
+
+body.events table.calendar tr td.otherMonth div.day_header {
+    background: #eee;
+}
+
+body.events table.calendar tr td.today {
+    background: #ffffcd;
+}
+
+body.events table.calendar tr td.today div.day_header {
+    background: #bbccdc;
+}
+
+body.events table.calendar tr td a.day_event:link,
+body.events table.calendar tr td a.day_event:visited {
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 3px;
+    text-decoration: none;
+}
+
+body.events table.calendar tr td a.day_more:link,
+body.events table.calendar tr td a.day_more:visited {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #464646;
+    font-size: 13px;
+}
+
+body.events div#calendar_header {
+    margin: 0px 0px 15px 0px;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    line-height: 13px;
+}
+
+body#index.events div#calendar_header div#controls,
+body#week.events div#calendar_header div#controls {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    right: 0px;
+    top: 3px;
+    text-align: right;
+}
+
+body#index.events div#calendar_header div#controls a.view_link,
+body#week.events div#calendar_header div#controls a.view_link {
+    padding: 3px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+    background: #eee;
+    margin: 0px 0px 0px 10px;
+}
+
+body#show.events div.event_info {
+    position: relative;
+}
+
+
+
+body#show.events div.event_info div.notes {
+    width: 425px;
+}
+body#show.events div.event_info dl {
+    position: relative;
+    display: block;
+}
+body#show.events div.event_info dl dt {
+    color: #c63;
+}
+
+body#show.events div.event_info dl dd {
+    position: relative;
+    overflow: visible;
+    top: -16px;
+    width: 400px;
+}
+
+body#show.events div.event_info div.photos,
+body#show.accounts_menu_placements div.photos,
+body#show.menu_placements div.photos,
+body#show.accounts_wait_staff_trainings div.photos,
+body#show.wait_staff_trainings div.photos,
+body#show.accounts_tactical_spends div.photos,
+body#show.tactical_spends div.photos,
+body#show.admin_pos_items div.photos,
+body#show.pos_items div.photos
+{
+    /*position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 240px;*/
+    width: 425px;
+    float: right;
+}
+
+body#show.events div.event_info div.photos div.thumbnail,
+body#show.accounts_menu_placements div.photos div.thumbnail,
+body#show.menu_placements div.photos div.thumbnail,
+body#show.accounts_wait_staff_trainings div.photos div.thumbnail,
+body#show.wait_staff_trainings div.photos div.thumbnail,
+body#show.accounts_tactical_spends div.photos div.thumbnail,
+body#show.tactical_spends div.photos div.thumbnail,
+body#show.admin_pos_items div.photos div.thumbnail,
+body#show.pos_items div.photos div.thumbnail
+{
+    width: 100px;
+    height: 100px;
+    background: #ddd;
+    float: left;
+    border: 3px solid #fff;
+}
+
+body#show.events div.event_info div.photos div.actions,
+body#show.accounts_menu_placements div.actions,
+body#show.menu_placements div.actions,
+body#show.accounts_wait_staff_trainings div.actions,
+body#show.wait_staff_trainings div.actions,
+body#show.accounts_tactical_spends div.actions,
+body#show.tactical_spends div.actions,
+body#show.admin_pos_items div.actions,
+body#show.pos_items div.actions
+{
+    padding: 0px 5px 0px 0px;
+}
+
+body#show.events div.event_recap {
+    margin: 0px 0px 20px 0px;
+}
+
+body.events table.recap_table,
+body.events_event_recaps table.recap_table {
+    width: 100%;
+}
+
+body#show.events div.recap_group {
+    padding: 0px 3px;
+}
+
+body#show.events div.comments p {
+    padding: 5px 0px 0px 0px;
+}
+
+body#show.events div.comments textarea {
+    width: 100%;
+    height: 100px;
+}
+
+body#show.events div.comments div.comment {
+    padding: 10px;
+    margin: 5px 0px;
+    position: relative;
+}
+
+body#show.events div.comments div.comment div.title {
+    color: #68656C;
+    font-size: 12px;
+}
+
+body#show.events div.comments div.even {
+    background: #eee;
+}
+
+body#show.programs div.comments p {
+    padding: 5px 0px 0px 0px;
+}
+
+body#show.programs div.comments textarea {
+    width: 100%;
+    height: 100px;
+}
+
+body#show.programs div.comments div.comment {
+    padding: 10px;
+    margin: 5px 0px;
+    position: relative;
+}
+
+body#show.programs div.comments div.comment div.title {
+    color: #68656C;
+    font-size: 12px;
+}
+
+body#show.programs div.comments div.even {
+    background: #eee;
+}
+
+/*----[COLUMNAR LAYOUT CONTENT STYLES]-------------------------------------------------*/
+
+body.columnar div#page div#content {
+    padding-top: 0px;
+}
+
+div#page div#content div#column_content {
+    width: 735px;
+    position: relative;
+    float: left;
+    padding-top: 15px;
+}
+
+div#page div#content div#column_nav {
+    position: absolute;
+    left: 763px;
+    width: 180px;
+}
+
+div#page div#content div#column_nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#page div#content div#column_nav ul li a:link,
+div#page div#content div#column_nav ul li a:visited {
+    display: block;
+    padding: 10px;
+    color: #454545;
+    text-decoration: none;
+}
+
+div#page div#content div#column_nav ul li a:hover {
+    color: #c94808 !important;
+}
+
+/*----[EVENT DETAIL]-------------------------------------------------------------------*/
+
+body#show.events div.event_info,
+body#show.programs_events div.event_info {
+    height: auto;
+}
+
+body#show.events div.event_recap {
+
+}
+
+body#show.events div.event_photos {
+    margin-top: 20px;
+    padding: 0px 3px;
+}
+
+/*----[PHOTOS]-------------------------------------------------------------------------*/
+
+table {
+    width: 100%;
+}
+
+table td.photo {
+    position: relative;
+    width: 270px;
+    margin: 0px 10px 10px 0px;
+    font-size: 13px;
+    height: 105px;
+}
+
+table td.photo img {
+    float: left;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+table td.div.photo_data {
+    padding-left: 105px;
+}
+
+table td.photo ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+table td.photo div.photo_links a:visited {
+    text-decoration: none;
+    color: #C96643;
+}
+
+div#lightbox div#imageDataContainer div#imageData div#imageDetails span#numberDisplay {
+    display: none;
+}
+/*----[videos]-------------------------------------------------------------------------*/
+
+#videos table{
+    width: 100%;
+}
+
+#videos table td.photo{
+    position: relative;
+    width: 270px;
+    margin: 0px 10px 10px 0px;
+    font-size: 13px;
+    height: 105px;
+}
+
+#videos table td.photo img{
+    float: left;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+#videos table td div.photo_data {
+    padding-left: 105px;
+}
+
+#videos table td.photo ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#videos table td.photo div.photo_links {
+}
+
+#videos table td.photo div.photo_links a:link,
+#videos table td.photo div.photo_links a:active,
+#videos table td.photo div.photo_links a:visited {
+    text-decoration: none;
+    color: #C96643;
+}
+
+div#lightbox div#imageDataContainer div#imageData div#imageDetails span#numberDisplay {
+    display: none;
+}
+
+/*----[EVENT RECAPS]-------------------------------------------------------------------*/
+
+div.metric {
+    display: block;
+    width: 200px;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+}
+
+div.metric div.title {
+    margin: 0px 0px 5px 0px;
+    font-weight: bold;
+}
+
+div.metric input[type='text'] {
+    width: 200px;
+    border: 1px solid gray;
+    font-size: 1.1em;
+}
+
+div.numeric_field {
+
+}
+
+div.monetary_field span.monetary_symbol {
+    margin-right: 5px;
+}
+
+div.monetary_field span.separator {
+    margin: 0px 5px;
+}
+
+div.monetary_field input.dollars {
+   width: 100px;
+}
+
+div.monetary_field input.cents {
+    width: 50px;
+}
+
+/*----[USER WELCOME PAGE]--------------------------------------------------------------*/
+
+
+body.admin-users div.welcome {
+    width: 400px;
+    margin: 0px auto;
+}
+
+body.admin-users div.welcome h1,
+body.admin-users div.welcome h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+body.admin-users div.welcome h1 {
+    color: #C96643;
+}
+
+/*----[ OVERVIEW LIST ]----------------------------------------------------------------*/
+
+div.overview_list {
+
+}
+
+div.overview_list dl {
+    position: relative;
+    display: block;
+}
+
+div.overview_list dl dt {
+}
+
+div.overview_list dl dd {
+    position: absolute;
+    left: 100px;
+    top: 0px;
+    height: 50px;
+    overflow: visible;
+}
+
+/*----[ ACCOUNTS ]---------------------------------------------------------------------*/
+
+body.accounts div.account_header {
+    position: relative;
+}
+
+body.events div#comments,body.programs div#comments,body.accounts div#comments {
+    margin: 30px 0px 0px 0px;
+}
+
+body.events div#comments h3,body.programs div#comments h3,body.accounts div#comments h3 {
+    color: #c66;
+}
+
+body.events div#comments p,body.programs div#comments p,body.accounts div#comments p {
+    padding: 5px 0px 0px 0px;
+}
+
+body.events div#comments textarea,body.programs div#comments textarea,body.accounts div#comments textarea {
+    width: 100%;
+    height: 100px;
+}
+
+body.events div#comments div.comment,body.programs div#comments div.comment,body.accounts div#comments div.comment {
+    padding: 10px;
+    margin: 5px 0px;
+    position: relative;
+}
+
+body.events div#comments div.comment div.title ,
+body.programs div#comments div.comment div.title ,body.accounts div#comments div.comment div.title {
+    color: #68656C;
+    font-size: 12px;
+}
+
+div#comments div.comment div.controls {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    font-size: 11px;
+}
+
+div#comments div.comment div.controls a {
+    text-decoration: none;
+    color: #000;
+}
+
+div#comments div.comment div.controls a:hover {
+    text-decoration: underline;
+}
+
+div#comments div.even {
+    background: #eee;
+}
+
+/*---- [USER FORM] --------------------------------------------------------------------*/
+
+body.admin_users div.user_item_list {
+    float: left;
+    width: 30%;
+    padding: 0px 0px 15px 0px;
+    display: block;
+    overflow: hidden;
+}
+
+body.admin_users div.user_item_list ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body.admin_users div.user_item_list ul li {
+    margin: 5px 0px 10px 0px;
+}
+
+/*---- [DASHBOARD] --------------------------------------------------------------------*/
+
+body#dashboard.pages { }
+
+body#dashboard.pages div.dashboard_section { }
+
+body#dashboard.pages div.dashboard_section h2 {
+    display: inline;
+}
+
+body#dashboard.pages div.dashboard_section table {
+    margin-top: 10px;
+}
+
+body#dashboard.pages div.dashboard_section span a:link,
+body#dashboard.pages div.dashboard_section span a:visited {
+    text-decoration: none;
+    border-bottom: 1px dotted #333;
+    color: #333;
+}
+
+/*---- [GVA] --------------------------------------------------------------------------*/
+
+body#gva.programs div#anchor_dropdown {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+}
+
+body#gva h3 a {
+    float: right;
+    font-size: 11px;
+    text-decoration: none;
+    color: #333;
+}
+
+/*---- [SEARCH HELP] ------------------------------------------------------------------*/
+
+div.help_header {
+    border-bottom: 2px solid #ccc;
+    padding: 20px 0px;
+}
+
+div.help_header h1 {
+}
+
+div.help_header p {
+    margin: 10px 0px;
+}
+
+div.help_header table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+div.help_header table thead {
+    background: #ccc;
+}
+
+div.help_header table td {
+    padding: 5px;
+}
+
+/*---- [ SORTABLE LIST ]---------------------------------------------------------------*/
+
+ul.sortable_list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+ul.sortable_list li {
+    display: block;
+}
+
+ul.sortable_list li.even {
+    background: #eee;
+}
+
+ul.sortable_list li.odd {
+
+}
+
+ul.sortable_list div {
+    padding: 7px;
+}
+
+ul.sortable_list div.header {
+    background-color: #eee;
+}
+
+ul.sortable_list span.action {
+    float: right;
+
+}
+
+/*---- [ NONSORTABLE LIST ]---------------------------------------------------------------*/
+
+ul.nonsortable_list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+ul.nonsortable_list li {
+    display: block;
+}
+
+ul.nonsortable_list li.even {
+    background: #eee;
+}
+
+ul.nonsortable_list li.odd {
+
+}
+
+ul.nonsortable_list div {
+    padding: 7px;
+}
+
+ul.nonsortable_list div.header {
+    background-color: #eee;
+}
+
+ul.nonsortable_list span.action {
+    float: right;
+
+}
+
+/*---- [ EVENT HOVER DETAILS ]---------------------------------------------------------*/
+
+div.hover_box {
+    position: absolute;
+    padding: 15px;
+    border: 1px solid #000;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+/* css for timepicker */
+
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+div.ui-datepicker{
+ font-size:10px;
+}
+
+#ui-datepicker-div { display: none; }
+.breadcrumbs {clear:both}
+.breadcrumbs a { text-decoration: none; color: #000000;}
+
+
+/*.footer {
+    text-align: right;
+        clear:both;
+        border-top: 1px solid #d4d4d4;
+    text-shadow: 1px 1px 1px #fff;
+        background: #e5e5e5; 
+    position:relative;
+        color: #333333;
+        font-family: Trebuchet MS,Arial,sans-serif;
+        font-size: 10px;
+        position: relative;
+    margin-top: -20px; 
+    height: 20px;
+    clear:both;
+        padding-top: 5px;
+}*/
+
+
+/* Alphabetical pagination css */
+/*
+ul.pagination {
+  list-style: none;
+  color: lightgray;
+  padding: 1em 0.5em;
+}
+
+ul.pagination strong {
+  color: black;
+}
+
+ul.pagination li {
+  display: inline;
+  font-size: 1.1em;
+}
+
+ul.pagination li:before {
+  content: '| ';
+}
+
+ul.pagination a {
+     -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border: none;
+    float: none;
+    line-height: none;
+    padding: 0px;
+    text-decoration: none;
+}
+
+#nav ul ul{
+    top:auto;
+    }
+
+#nav li ul ul {
+    left:12em;
+    margin:-32px 0 0 6px
+    }
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li:hover ul ul ul ul{
+    display:none;
+    }
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul{
+    display:block;
+    }
+
+.pointer {cursor: pointer}
+.hidden {display: none}
+
+.navigation_list ul span {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.pagination ul {
+    margin: 0;
+}
+
+.reports_account_name{text-decoration:none;
+ color:black;
+ font-weight:bold;
+ font-size:16px;
+ text-transform: capitalize;
+}
+*/
